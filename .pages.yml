@@ -1,0 +1,145 @@
+media:
+  input: assets
+  output: /assets
+content:
+  - name: site
+    label: Site content
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: profile
+        label: Profile and page details
+        type: object
+        fields:
+          - name: name
+            label: Display name
+            type: string
+          - name: heroEyebrow
+            label: Intro label
+            type: string
+          - name: headlinePrimary
+            label: Main headline
+            type: string
+          - name: headlineAccent
+            label: Headline accent
+            type: string
+          - name: heroIntro
+            label: Intro paragraph
+            type: text
+          - name: aboutTitle
+            label: About heading
+            type: string
+          - name: aboutAccent
+            label: About heading accent
+            type: string
+          - name: aboutParagraphs
+            label: About paragraphs
+            type: text
+            list: true
+          - name: interests
+            label: Areas of interest
+            type: string
+            list: true
+          - name: contactTitle
+            label: Contact heading
+            type: string
+          - name: contactIntro
+            label: Contact paragraph
+            type: text
+      - name: socials
+        label: Social links
+        type: object
+        fields:
+          - name: linkedin
+            label: LinkedIn URL
+            type: string
+          - name: x
+            label: X URL
+            type: string
+          - name: youtube
+            label: YouTube URL
+            type: string
+      - name: projects
+        label: Projects
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: number
+            label: Display number
+            type: string
+          - name: category
+            label: Category
+            type: string
+          - name: title
+            label: Project title
+            type: string
+          - name: description
+            label: Project summary
+            type: text
+          - name: tags
+            label: Topics
+            type: string
+            list: true
+          - name: visual
+            label: Illustration style
+            type: string
+          - name: link
+            label: Project link (optional)
+            type: string
+      - name: posts
+        label: Blog posts and field notes
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: slug
+            label: URL slug (unique, lowercase)
+            type: string
+          - name: date
+            label: Publication date
+            type: date
+          - name: category
+            label: Category
+            type: string
+          - name: title
+            label: Post title
+            type: string
+          - name: excerpt
+            label: Short summary
+            type: text
+          - name: body
+            label: Article text
+            type: text
+          - name: link
+            label: Related link (optional)
+            type: string
+          - name: published
+            label: Published on the website
+            type: boolean
+            default: false
+      - name: learning
+        label: Courses and certifications
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: kind
+            label: Type
+            type: string
+          - name: title
+            label: Course or certification
+            type: string
+          - name: provider
+            label: Provider and completion date
+            type: string
+          - name: link
+            label: Credential link (optional)
+            type: string

@@ -1,0 +1,31 @@
+{
+  "profile": {
+    "name": "Varun Vyas",
+    "heroEyebrow": "A working notebook by Varun Vyas",
+    "headlinePrimary": "Making data",
+    "headlineAccent": "make sense.",
+    "heroIntro": "I explore how thoughtful data systems and clear storytelling can help people make better decisions. Here’s what I’m building, noticing, and learning along the way.",
+    "aboutTitle": "Good data work",
+    "aboutAccent": "starts with people.",
+    "aboutParagraphs": [
+      "I’m Varun: a data professional interested in the space between business questions and the systems that help answer them.",
+      "This is a place to share practical projects, useful ideas, and the lessons that don’t always fit in a dashboard. The aim is simple: make complex things clearer and useful things easier to find."
+    ],
+    "interests": [
+      "Finance & performance",
+      "People & talent",
+      "Data architecture",
+      "Advisory & delivery"
+    ],
+    "contactTitle": "Have a thoughtful data question?",
+    "contactIntro": "I’m always up for swapping notes on how data can support clearer decisions, stronger teams, and better systems."
+  },
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/varunvinodvyas/",
+    "x": "https://x.com/vyasvarunv",
+    "youtube": "https://www.youtube.com/@DataWithVarun"
+  },
+  "projects": [],
+  "posts": [],
+  "learning": []
+}

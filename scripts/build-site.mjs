@@ -107,7 +107,7 @@ for (const file of files) {
 }
 
 const seenSlugs = new Set();
-const publishedPosts = content.posts.filter((post) => post.published);
+const publishedPosts = (content.posts || []).filter((post) => post.published);
 for (const post of publishedPosts) {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(post.slug || "")) {
     throw new Error(`Invalid post slug "${post.slug}". Use lowercase letters, numbers, and hyphens.`);

@@ -1,9 +1,9 @@
 {
   "profile": {
     "name": "Varun Vyas",
-    "heroEyebrow": "A working notebook by Varun Vyas",
-    "headlinePrimary": "Making data",
-    "headlineAccent": "make sense.",
+    "heroEyebrow": "Building the Data Engineeirng Solutions with Modern Data Stack",
+    "headlinePrimary": "Building Data Driven Solutions",
+    "headlineAccent": "that makes sense.",
     "heroIntro": "I explore how thoughtful data systems and clear storytelling can help people make better decisions. Here’s what I’m building, noticing, and learning along the way.",
     "aboutTitle": "Good data work",
     "aboutAccent": "starts with people.",
@@ -24,8 +24,5 @@
     "linkedin": "https://www.linkedin.com/in/varunvinodvyas/",
     "x": "https://x.com/vyasvarunv",
     "youtube": "https://www.youtube.com/@DataWithVarun"
-  },
-  "projects": [],
-  "posts": [],
-  "learning": []
+  }
 }

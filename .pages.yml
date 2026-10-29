@@ -60,6 +60,20 @@ content:
           - name: youtube
             label: YouTube URL
             type: string
+      - name: tools
+        label: Tool belt
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Tool name
+            type: string
+          - name: icon
+            label: Simple Icons slug
+            type: string
       - name: projects
         label: Projects
         type: object

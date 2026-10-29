@@ -4,6 +4,12 @@ const visualMarkup = {
   people: '<div class="visual visual-people" aria-hidden="true"><div class="people-ring ring-one"></div><div class="people-ring ring-two"></div><div class="people-dot dot-one"></div><div class="people-dot dot-two"></div><div class="people-dot dot-three"></div><div class="people-center">PEOPLE<br>FIRST</div><span class="people-caption">Context is part of the data.</span></div>'
 };
 
+const toolIconSources = {
+  microsoftazure: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+  azuredevops: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg",
+  amazonaws: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+};
+
 const setText = (selector, value) => {
   const element = document.querySelector(selector);
   if (element && typeof value === "string") element.textContent = value;
@@ -71,6 +77,36 @@ function renderProfile(content) {
   document.querySelector("#year").textContent = new Date().getFullYear();
 }
 
+function renderTools(tools) {
+  const track = document.querySelector("#tool-belt-track");
+  if (!track) return;
+  track.replaceChildren();
+
+  [false, true].forEach((duplicate) => {
+    const group = make("div", "tool-belt-group");
+    if (duplicate) group.setAttribute("aria-hidden", "true");
+    (tools || []).forEach((tool) => {
+      if (!/^[a-z0-9-]+$/.test(tool.icon || "")) return;
+      const item = make("span", "tool-belt-item");
+      if (tool.icon === "powerbi") {
+        item.append(make("span", "tool-belt-glyph", "PB"));
+      } else {
+        const icon = document.createElement("img");
+        icon.src = toolIconSources[tool.icon] || `https://cdn.simpleicons.org/${tool.icon}`;
+        icon.alt = "";
+        icon.loading = "lazy";
+        icon.addEventListener("error", () => {
+          icon.replaceWith(make("span", "tool-belt-glyph", tool.name.slice(0, 2).toUpperCase()));
+        }, { once: true });
+        item.append(icon);
+      }
+      item.append(make("span", "", tool.name));
+      group.append(item);
+    });
+    track.append(group);
+  });
+}
+
 function renderProjects(projects) {
   const grid = document.querySelector("#project-grid");
   grid.replaceChildren();
@@ -88,7 +124,10 @@ function renderProjects(projects) {
 
     const info = make("div", "project-info");
     const meta = make("div", "card-meta");
-    meta.append(make("span", "", project.category), make("span", "", project.number || String(index + 1).padStart(2, "0")));
+    meta.append(
+      make("span", "", project.category),
+      make("span", "project-number", project.number || String(index + 1).padStart(2, "0"))
+    );
     const title = make("h3", "", project.title);
     const linkUrl = safeUrl(project.link);
     if (linkUrl) {
@@ -165,6 +204,7 @@ fetch("content/site.json")
   })
   .then((content) => {
     renderProfile(content);
+    renderTools(content.tools);
     renderProjects(content.projects);
     renderPosts(content.posts);
     renderLearning(content.learning);

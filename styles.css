@@ -71,6 +71,16 @@ h1 em, h2 em { color: var(--green); font-family: Georgia, serif; font-weight: 40
 .hero-index > span:first-child { color: var(--orange); }
 .index-line { width: 55px; height: 1px; background: var(--line); }
 
+.tool-belt { padding: 18px 0 20px; overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #e8eae0; }
+.tool-belt-heading { display: flex; justify-content: space-between; padding: 0 13.8% 15px; color: var(--muted); font: 500 8px var(--mono); letter-spacing: .08em; }
+.tool-belt-viewport { overflow: hidden; }
+.tool-belt-track { display: flex; width: max-content; animation: tool-belt-scroll 38s linear infinite; }
+.tool-belt:hover .tool-belt-track, .tool-belt:focus-within .tool-belt-track { animation-play-state: paused; }
+.tool-belt-group { display: flex; flex: none; align-items: center; gap: 48px; padding-right: 48px; }
+.tool-belt-item { display: inline-flex; min-width: 128px; align-items: center; gap: 11px; color: #414b43; font: 600 11px var(--display); white-space: nowrap; }
+.tool-belt-item img { display: block; width: 22px; height: 22px; object-fit: contain; }
+.tool-belt-glyph { display: grid; width: 22px; height: 22px; flex: none; place-items: center; border: 1px solid rgba(32,40,36,.2); background: #f3f3eb; color: var(--green); font: 700 8px var(--mono); }
+
 .intro-band { padding: 38px 13.8% 45px; background: #e8eae0; }
 .section-kicker { display: flex; justify-content: space-between; padding-bottom: 15px; border-bottom: 1px solid var(--line); color: var(--muted); }
 .intro-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 8%; align-items: start; padding: 48px 0 40px; }
@@ -125,7 +135,8 @@ h2 { margin-bottom: 0; font-size: clamp(39px, 4.3vw, 57px); line-height: 1.08; }
 .dot-three { top: 76px; right: 27%; background: #c39a55; }
 .people-caption { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; color: #665c69; font: 8px var(--mono); }
 .project-info { padding: 17px 16px 19px; }
-.card-meta { display: flex; justify-content: space-between; gap: 8px; color: var(--muted); font-size: 8px; }
+.card-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: var(--muted); font-size: 8px; }
+.project-number { display: grid; width: 28px; height: 28px; flex: none; place-items: center; background: var(--orange); color: var(--ink); font: 700 10px var(--mono); }
 .project-info h3 { min-height: 46px; margin: 15px 0 8px; font: 600 16px/1.4 var(--display); }
 .project-info > p { min-height: 76px; margin-bottom: 15px; color: #626a63; font-size: 11px; line-height: 1.7; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -229,12 +240,14 @@ h2 { margin-bottom: 0; font-size: clamp(39px, 4.3vw, 57px); line-height: 1.08; }
 .footer-back { font-weight: 600; }
 
 @keyframes turn { to { transform: rotate(360deg); } }
+@keyframes tool-belt-scroll { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
 @media (max-width: 900px) {
   .site-header { padding: 0 5%; }
   .hero { padding: 65px 8% 60px; }
   .hero::before { right: 6%; }
   .hero-index { right: 5%; }
+  .tool-belt-heading { padding-right: 8%; padding-left: 8%; }
   .intro-band, .section-pad { padding-left: 8%; padding-right: 8%; }
   .connect-band { padding-left: 8%; padding-right: 8%; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -272,6 +285,11 @@ h2 { margin-bottom: 0; font-size: clamp(39px, 4.3vw, 57px); line-height: 1.08; }
   .orbit-bottom { right: 0; }
   .hero-spark { top: 2px; left: 4%; }
   .hero-index { right: 22px; bottom: 17px; font-size: 8px; }
+  .tool-belt { padding-top: 15px; padding-bottom: 16px; }
+  .tool-belt-heading { padding: 0 23px 12px; font-size: 7px; }
+  .tool-belt-group { gap: 32px; padding-right: 32px; }
+  .tool-belt-item { min-width: 112px; font-size: 10px; }
+  .tool-belt-item img { width: 20px; height: 20px; }
   .intro-band, .section-pad { padding-left: 23px; padding-right: 23px; }
   .intro-band { padding-top: 27px; padding-bottom: 32px; }
   .section-kicker { font-size: 7px; gap: 12px; }

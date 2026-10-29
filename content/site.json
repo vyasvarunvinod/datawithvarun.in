@@ -1,31 +1,71 @@
 {
   "profile": {
     "name": "Varun Vyas",
-    "heroEyebrow": "A working notebook by Varun Vyas",
+    "heroEyebrow": "Senior Data Engineer | Azure Databricks & Cloud Platforms",
     "headlinePrimary": "Making data",
-    "headlineAccent": "make sense.",
-    "heroIntro": "I explore how thoughtful data systems and clear storytelling can help people make better decisions. Here’s what I’m building, noticing, and learning along the way.",
-    "aboutTitle": "Good data work",
-    "aboutAccent": "starts with people.",
+    "headlineAccent": "work at scale.",
+    "heroIntro": "I’m a Senior Data Engineer with 5+ years building dependable data platforms across finance, automotive, and process mining. I turn complex source systems into trusted, decision-ready data using Azure Databricks, Spark, Python, SQL, and cloud services.",
+    "aboutTitle": "Trusted data",
+    "aboutAccent": "built to scale.",
     "aboutParagraphs": [
-      "I’m Varun: a data professional interested in the space between business questions and the systems that help answer them.",
-      "This is a place to share practical projects, useful ideas, and the lessons that don’t always fit in a dashboard. The aim is simple: make complex things clearer and useful things easier to find."
+      "I’m Varun, a Senior Data Engineer with more than five years of experience designing data pipelines and platforms for enterprise teams. I currently build Azure Databricks lakehouse solutions for SAP finance data.",
+      "My work spans Medallion Architecture, Unity Catalog, PySpark, Airflow, AWS, data quality, and governance. I care about measurable outcomes: reliable pipelines, faster reporting, and data that people can use with confidence."
     ],
     "interests": [
-      "Finance & performance",
-      "People & talent",
-      "Data architecture",
-      "Advisory & delivery"
+      "Azure Databricks lakehouses",
+      "Data quality & governance",
+      "Cloud data engineering",
+      "Finance & spatial data"
     ],
-    "contactTitle": "Have a thoughtful data question?",
-    "contactIntro": "I’m always up for swapping notes on how data can support clearer decisions, stronger teams, and better systems."
+    "contactTitle": "Building something with data?",
+    "contactIntro": "I’m glad to connect about data engineering, Azure Databricks, lakehouse architecture, and building dependable pipelines that solve real business problems."
   },
   "socials": {
     "linkedin": "https://www.linkedin.com/in/varunvinodvyas/",
     "x": "https://x.com/vyasvarunv",
     "youtube": "https://www.youtube.com/@DataWithVarun"
   },
-  "projects": [],
+  "tools": [
+    { "name": "Azure Databricks", "icon": "databricks" },
+    { "name": "Microsoft Azure", "icon": "microsoftazure" },
+    { "name": "Apache Spark", "icon": "apachespark" },
+    { "name": "Python", "icon": "python" },
+    { "name": "Apache Airflow", "icon": "apacheairflow" },
+    { "name": "AWS", "icon": "amazonaws" },
+    { "name": "Snowflake", "icon": "snowflake" },
+    { "name": "Power BI", "icon": "powerbi" },
+    { "name": "Azure DevOps", "icon": "azuredevops" },
+    { "name": "Git", "icon": "git" }
+  ],
+  "projects": [
+    {
+      "number": "01",
+      "category": "AZURE DATABRICKS / FINANCE",
+      "title": "Enterprise finance lakehouse",
+      "description": "Built a Bronze-to-Silver-to-Gold lakehouse on Azure Databricks and ADLS Gen2 for SAP ECC finance data across 54 business units, processing 3.5 TB daily. Unity Catalog added centralized governance and fine-grained access controls for 200+ schemas.",
+      "tags": ["Azure Databricks", "ADLS Gen2", "Unity Catalog", "SAP ECC"],
+      "visual": "architecture",
+      "link": ""
+    },
+    {
+      "number": "02",
+      "category": "DATA QUALITY / PROCESS MINING",
+      "title": "Faster, trusted process insights",
+      "description": "Orchestrated incremental Celonis API pipelines into Azure Databricks and SQL Server, cutting process-mining report generation from 24 hours to under 45 minutes. Automated PySpark validation reduced reconciliation errors by 98.5%.",
+      "tags": ["Celonis", "Python", "Apache Airflow", "PySpark"],
+      "visual": "performance",
+      "link": ""
+    },
+    {
+      "number": "03",
+      "category": "AWS / AUTOMOTIVE DATA",
+      "title": "High-throughput spatial pipelines",
+      "description": "Built distributed AWS Glue and PySpark ingestion for more than 15 million daily spatial records, improving query runtime by 40%. A Gemini-powered batch workflow also automated address transliteration across 13 Indic languages.",
+      "tags": ["AWS Glue", "PySpark", "Amazon Redshift", "GenAI"],
+      "visual": "people",
+      "link": ""
+    }
+  ],
   "posts": [],
   "learning": []
 }

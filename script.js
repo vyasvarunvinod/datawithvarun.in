@@ -197,7 +197,7 @@ function renderLearning(items) {
   });
 }
 
-fetch("content/site.json")
+fetch("content/site.json", { cache: "no-store" })
   .then((response) => {
     if (!response.ok) throw new Error("Content is not available.");
     return response.json();
